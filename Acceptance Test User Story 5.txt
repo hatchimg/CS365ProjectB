@@ -1,0 +1,55 @@
+Acceptance Test User Story 5
+
+5.Stored User and Pet data
+User is able to add/delete/update data on the system database.
+
+------------------------------------------------------------------------------------------
+What are the components for creating a User Profile Data?
+
+Adding a Pet:
+pet info--->|petform|--->pet info--->|database|--->pet table on user page is updated
+
+Deleting a Pet:
+pet info--->|petDeletionform|--->pet info--->|database|--->pet table on user page is updated
+
+Update Pet Data:
+select petname from update dropdown--->|petUpdateform|--->
+--->table fields become editable, user populates these fields--->|database|--->pet table on user page is updated
+
+------------------------------------------------------------------------------------------
+
+
+Unit Test for Adding a Pet:
+Input: Name: catInTheHat Type of Animal:dog Size:small Weight:2lbs Breed:cat Color:black 
+Other Notes:Dog that acts like a cat Photo:
+;Verify:User page populates pet table with the new pet information along with existing 
+pet information
+
+Input: Name:<null> Type of Animal:dog Size:small Weight:2lbs Breed:cat Color:black 
+Other Notes:Dog that acts like a cat Photo:
+;Verify: A message stating that the user must populate the name field for pet form. 
+
+Input: Name: catInTheHat Type of Animal:<null> Size:small Weight:2lbs Breed:cat Color:black 
+Other Notes:Dog that acts like a cat Photo:
+;Verify: A message stating that the user must populate the type of animal field for pet form. 
+
+Input: Name: catInTheHat Type of Animal:dog Size:small Weight:2lbs Breed:<null> Color:black 
+Other Notes:Dog that acts like a cat Photo:
+;Verify: A message stating that the user must populate the breed field for pet form. 
+
+Input: Name: catInTheHat Type of Animal:dog Size:small Weight:2lbs Breed:cat Color:<null> 
+Other Notes:Dog that acts like a cat Photo:
+;Verify: A message stating that the user must populate the color field for pet form. 
+
+
+
+Unit Test for Deleting a Pet:
+Input:Select pet's name from dropdown ;Verify: Userpage pet table now does not have 
+corresponding pet's row in the table. 
+
+------------------------------------------------------------------------------------------
+Acceptance Test:
+Test: User adds a pet, but then updates the pets name and then decides to delete all pet data. 
+Verify:User should see that the pet table is populated with a new row in the table for pets. 
+After clicking on update pet data button, the fields in the row for the pet selected become editable. 
+After selecting pet to delete from database, the row for that pet does not appear on the pet table. 

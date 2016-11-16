@@ -1,0 +1,49 @@
+Acceptance Test User Story 4:
+
+4.Create User Profile data
+Through the application, the user sets up a profile with personal information and pet(s) 
+information to be saved locally in JSON format.
+
+------------------------------------------------------------------------------------------
+
+What are the components for creating a User Profile Data?
+
+Registration:
+user registration info ---->|registration(form)| ---> user registration info---> |database|
+
+Signing In:
+user log in info--->|validation/logIn(form)|---> user log in info--->|database|--->
+---->(from line above)table info of user(and pets)--->|userPage|  
+
+------------------------------------------------------------------------------------------
+
+Unit Test for Registration:
+Input: username:michael password:<null> ;Verify: message asking for user to enter a password
+Input: username:<null> password:12345 ;Verify: message asking user to enter a username
+Input: username:michael password:12345; Verify: if username does not exist in database, then 
+	message stating that the registration is complete
+Input: username:michael password:12345; Verify: if username exist in database, then 
+	message stating that the registration is not complete and for user to use a different username
+
+
+
+Unit Test for Signing In:
+Input: username:michael password:<null> ;Verify: message asking for user to enter a password
+Input: username:<null> password:12345 ;Verify: message asking user to enter a username
+Input: username:michael password:12345 ;Verify:if username does not exists in database, then print message
+	that the username does not exists
+Input: username:michael password:12345 ;Verify:if username exists in database and the password does not
+	match password in database, then print message that the password is incorrect. 
+Input: username:michael password:12345;Verify:if username exists in datbase and password matches 
+	the password under the username in the database then redirect user to the user page and 
+	take tables/user info from database and populate userpage. 
+
+
+
+------------------------------------------------------------------------------------------
+Acceptance Test:
+Test: User registers a username:michael and password:12345 (username does not exist in database) 
+and the user signs into his account.
+Verify: The user should be taken to the User Page with pet tables empty but with personal table 
+populated with some information.
+
