@@ -1,0 +1,24 @@
+User Stories for Group 7
+Below is a list of User Stories based on priority with the first story being listed as the most important:
+1.Generate GPS data
+Software on the pet device, periodically generates GPS coordinates of the pet device along with the current time to a JSON file.  Data on the JSON file contains a period of 1 minute to 30 seconds of data.
+2.Send GPS data to Application
+Application accepts periodic transmission of a JSON file containing the time and GPS data from the pet device.  
+3.View pet coordinates
+Be able to parse the JSON data and view updated data on the application in real-time.  The user is able to view GPS coordinate data and the time from the application.
+4.Create User Profile data
+Through the application, the user sets up a profile with personal information and pet(s) information to be saved locally in JSON format.
+5.Stored User and Pet data
+User is able to add/delete/update data on the system database.
+6.Retrieve User and Pet data
+From the system application, the user can make a request to the server about a particular pet and receive pet and user data information.
+7.Server sends an alert
+Server can send an alert notification to the application with a message.
+8.Enable/Disable GPS location
+The user is able to click a button on the application to send a signal to the device to start/stop generating GPS data.
+9.View map data
+With an indicator showing the current location of the user and the last sent GPS coordinates of the pet, the application has a local graphical map representation.
+10.Find user’s within a radius
+The server is able to calculate a 5 mile radius of a given GPS coordinates and find users of the system in the database whose address are within the 5 mile radius.
+11.Scan pet ID
+The application is able to scan a visible code on the pet’s collar and return the code to the application.
