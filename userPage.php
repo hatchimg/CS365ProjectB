@@ -210,7 +210,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 						echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 					//Generates html table, inserting variable values for td
 					while ($stmt->fetch())
-						echo "<tr>\n<td>" . $name . "</td>\n<td>" . $animalType . "</td>\n<td>" . $size . "</td>\n<td>" . $weightPounds . "</td>\n<td>" . $breed . "</td>\n<td>" . $color . "</td>\n<td>" . $otherNotes . "</td>\n<td><img src='" . $petPhoto . "' style='width:90px;'></td>\n<td>" . $gpsCoord . "</td>\n<td>" . "<input class='button' name='addPet' type='submit' value='Find " . $name . "'/>" . "</td>\n</tr>";
+						echo "<tr>\n<td>" . $name . "</td>\n<td>" . $animalType . "</td>\n<td>" . $size . "</td>\n<td>" . $weightPounds . "</td>\n<td>" . $breed . "</td>\n<td>" . $color . "</td>\n<td>" . $otherNotes . "</td>\n<td><img src='" . $petPhoto . "' style='width:90px;'></td>\n<td>" . $gpsCoord . "</td>\n<td>" . "<input name='FindPet' type='button' onclick="location.href='TestGeoLocate.html';" value='Find " . $name . "'/>" . "</td>\n</tr>";
 					
 					$stmt->close();
 				?>
